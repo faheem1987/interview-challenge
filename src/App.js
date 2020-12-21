@@ -5,7 +5,12 @@ import './App.css';
 
 function App() {
   const [idsList, saveIdsList] = useState([]);
-  const saveImageId = (id, pageURL) => saveIdsList([...idsList, {id,  pageURL}]);
+  const saveImageId = (picId, pageURL) => {
+    if(idsList.filter(({id}) => id === picId).length) {
+      return null;
+    }
+    saveIdsList([...idsList, {id: picId,  pageURL}])
+  };
   return (
     <div className="App">
       <Form saveImageId={saveImageId} idsList={idsList}/>

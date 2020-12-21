@@ -7,7 +7,7 @@ const SavedLinks = ({idsList}) => (
   <div className="searched-category">
     <h2>Saved</h2>
     <ul className="saved-images">
-      {idsList.map(({ id, pageURL }) => <li><a href={pageURL} target="_blank" rel="noreferrer"># {id} <FaExternalLinkAlt /></a></li>)}
+      {idsList.map(({ id, pageURL }, index) => <li key={index}><a href={pageURL} target="_blank" rel="noreferrer"># {id} <FaExternalLinkAlt /></a></li>)}
     </ul>
   </div>
 );
