@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import { FaExternalLinkAlt } from 'react-icons/fa';
+import Form from './componets/category-form';
 import './App.css';
 
 function App() {
+  const [idsList, saveIdsList] = useState([]);
+  const saveImageId = (id, pageURL) => saveIdsList([...idsList, {id,  pageURL}]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form saveImageId={saveImageId} idsList={idsList}/>
+      <div className="searched-category">
+        <h2>Saved</h2>
+        <ul className="saved-images">
+          {idsList.map(({ id, pageURL }) => <li><a href={pageURL}># {id} <FaExternalLinkAlt /></a></li>)}
+        </ul>
+      </div>
     </div>
   );
 }
