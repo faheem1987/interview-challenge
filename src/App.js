@@ -12,7 +12,7 @@ function App() {
       <div className="searched-category">
         <h2>Saved</h2>
         <ul className="saved-images">
-          {idsList.map(({ id, pageURL }) => <li><a href={pageURL}># {id} <FaExternalLinkAlt /></a></li>)}
+          {idsList.map(({ id, pageURL }) => <li><a href={pageURL} target="_blank" rel="noreferrer"># {id} <FaExternalLinkAlt /></a></li>)}
         </ul>
       </div>
     </div>
