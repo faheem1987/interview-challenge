@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import { FaExternalLinkAlt } from 'react-icons/fa';
 import Form from './componets/category-form';
+import SavedLinks from './componets/saved-links';
 import './App.css';
 
 function App() {
@@ -9,12 +9,7 @@ function App() {
   return (
     <div className="App">
       <Form saveImageId={saveImageId} idsList={idsList}/>
-      <div className="searched-category">
-        <h2>Saved</h2>
-        <ul className="saved-images">
-          {idsList.map(({ id, pageURL }) => <li><a href={pageURL} target="_blank" rel="noreferrer"># {id} <FaExternalLinkAlt /></a></li>)}
-        </ul>
-      </div>
+      <SavedLinks idsList={idsList} />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import { FaThumbsUp, FaStar } from 'react-icons/fa';
 
 const CategoryList = props => {
@@ -31,5 +32,12 @@ const CategoryList = props => {
     </div>
   );
 }
+
+CategoryList.propTypes = {
+  list: PropTypes.array,
+  isLoading: PropTypes.bool, 
+  saveImageId: PropTypes.func,
+  idsList: PropTypes.array,
+};
 
 export default CategoryList;

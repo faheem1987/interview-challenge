@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import PropTypes from "prop-types";
 import axios from 'axios';
 import CategoryList from './category-list';
 const API_KEY = "13136421-266c28a6d61717bc2e4e6a83e";
@@ -45,5 +46,10 @@ const CategoryForm = (props) => {
     </div>
   );
 }
+
+CategoryForm.propTypes = {
+  saveImageId: PropTypes.func,
+  idsList: PropTypes.array,
+};
 
 export default CategoryForm;

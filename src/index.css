@@ -84,14 +84,14 @@ code {
   margin-left: 25px;
 }
 
-.list-item img {
+.image-wrapper img {
   height: 160px;
   width: 238px;
-  cursor: pointer;
 }
 
 .image-wrapper {
   position: relative;
+  cursor: pointer;
 }
 
 .image-wrapper span {
